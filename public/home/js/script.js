@@ -2,7 +2,7 @@ var language = null;
 (function () {
     if (localStorage.getItem("language") != null) {
         $.ajax({
-            url: 'public/home/js/lang/' + localStorage.getItem('language') + '.json',
+            url: config.trans.lang_path+'/' + localStorage.getItem('language') + '.json',
             dataType: 'json', async: false, dataType: 'json',
             success: function (lang) { language = lang }
         });
@@ -107,20 +107,28 @@ $(document).ready(function () {
 /****************************************************** End Language ********************************************************************/
 
 /************************************************** Start pop up dialog  ***************************************************************** */
-function openModal() {
-
-                               var id =   document.getElementById("product_id").data('product-id');
-								console.log(id);
-                                $.ajax({
+function openModal(id) {
+    $('#mainSlide').html('');
+    $('#column').html('');
+                                  $.ajax({
                                     url: "product_view/" + id + "/view",
                                     dataType: "json",
                                     success: function (html) {
-                                        console.log(html);
-
+                                         $('#main_image img').attr('src', html.main_image);
+                                        $('#main_column img').attr('src', html.main_image);
+var counter=2;
+                                        for (i = 0; i < html.data.length; ++i) {
+                                           var data="<div class='mySlides'><img src="+html.data[i].detail_image+" width='100%' height='500px'> </div>";
+                                           var column="<div class='column'><img class='demo cursor' src="+html.data[i].detail_image+" width='100px' height='30px' onclick='currentSlide("+counter+")' alt='Nature and sunrise'></div>";
+                                             $('#mainSlide').append(data);
+                                            $('#column').append(column);
+                                            counter++;
+                                        }
+                                       
                                     }
 									
                                 });
-                            
+                                
     document.getElementById("myModal").style.display = "block";
   }
   
@@ -136,7 +144,7 @@ function openModal() {
   }
   
   function currentSlide(n) {
-    showSlides(slideIndex = n);
+     showSlides(slideIndex = n);
   }
   
   function showSlides(n) {

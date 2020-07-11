@@ -17,4 +17,12 @@ class Detail_image extends Model
     {
         return $this->hasOne('App\Product', 'id', 'product_id');
     }
+    
+    public function getDetailImageAttribute($img)
+    {
+        if ($img)
+            return asset('public/uploads/Detail_images') . '/' . $img;
+        else
+            return "";
+    }
 }

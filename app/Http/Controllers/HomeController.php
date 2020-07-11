@@ -19,9 +19,10 @@ class HomeController extends Controller
     public function show_datails($id){
          
         if (request()->ajax()) { 
-        $data = Detail_image::where('product_id',$id)->get(); 
-        dd($data);
-        return response()->json(['data' => $data]);
+        $data = Detail_image::where('product_id',$id)->get()->toArray(); 
+        $product = product::where('id',$id)->first();
+        
+         return response()->json(['data' => $data,'main_image'=>$product->Product_image]);
         }
     }
 }

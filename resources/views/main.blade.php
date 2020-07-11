@@ -15,14 +15,14 @@
                 @foreach($products as $rows)
 					<li class="revealOnScroll" data-animation="fadeInUp" data-timeout="10">
 						<figure class="effect-jazz">
-							<div class="battary_shaps" style="background-image:url({{ asset('public/uploads/Product_images/'.$rows->Product_image) }})">
+							<div class="battary_shaps" style="background-image:url({{$rows->Product_image}})">
 							</div>
 							<figcaption class="revealOnScroll" data-animation="fadeInUp" >
 								<h2>{{$rows->name}}</h2>
-								<p class="btShow" >اضغط هنا لعرض التفاصيل</p>    
+								<p class="btShow">اضغط هنا لعرض التفاصيل</p>    
                                 <!-- onclick="openModal();currentSlide(1)"
 									view_details -->
-								<a id="product_id" class="fancybox" data-product-id="{{$rows->id}}"  onclick="openModal();"
+								<a id="product_id" class="fancybox"   onclick="openModal('{{$rows->id}}');currentSlide(1)"
                                 class="hover-shadow cursor"></a>
 								
 							</figcaption>
@@ -163,20 +163,21 @@
 		</div>
 		<!-- ********************* end Contact With Us *********************************-->
 
-		<footer id="footer">
+	
+		<!-- footer / -->
+	</section>
+ 
 			<section class="section">
-				<div class="copyright">© 2020 4M</div>
-				<div class="orbit"><a href="" target="_blank">4M</a></div>
-
-				<div class="bilgitoplumu">
+			<p  class="clearfix text-muted text-sm-center mb-0 px-2">
+			<span class="float-md-left d-xs-block d-md-inline-block">Copyright  &copy; 2020
+			 <a href="#" target="_blank" class="text-bold-800 dark darken-2">4M Systems </a>
+			 , All rights reserved. </span>
+			 <span class="float-md-right d-xs-block d-md-inline-block"> </span></p>
 
 				</div>
 			</section>
 			<!-- section / -->
-		</footer>
-		<!-- footer / -->
-	</section>
-
+		 
 	<a href="#0" class="cd-top">Top</a>
 
 
@@ -184,50 +185,25 @@
 	<div id="myModal" class="modal">
 		<span class="close cursor" onclick="closeModal()">&times;</span>
 		<div class="modal-content">
+		<div class="mySlides" id='main_image'>
+		<img width='100%' height='500px'>
+		</div>
 
-			<div class="mySlides">
-				<div class="numbertext">1 / 4</div>
-				<img src="{{url('public/home/img/b1.jpg')}}" style="width:100%">
+			<div id="mainSlide">
+				
 			</div>
-
-			<div class="mySlides">
-				<div class="numbertext">2 / 4</div>
-				<img src="{{url('public/home/img/b2.jpg')}}" style="width:100%">
-			</div>
-
-			<div class="mySlides">
-				<div class="numbertext">3 / 4</div>
-				<img src="{{url('public/home/img/b1.jpg')}}" style="width:100%">
-			</div>
-
-			<div class="mySlides">
-				<div class="numbertext">4 / 4</div>
-				<img src="{{url('public/home/img/b1.jpg')}}" style="width:100%">
-			</div>
-
+			
 			<a class="prev" onclick="plusSlides(-1)" style="color:#0b449b">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)" style="color:#0b449b">&#10095;</a>
 
 			<div class="caption-container">
 				<p id="caption"></p>
 			</div>
-
-
-			<div class="column">
-				<img class="demo cursor" src="{{url('public/home/img/b1.jpg')}}" style="width:100%" onclick="currentSlide(1)"
+			<div class="column" id='main_column'>
+				<img class="demo cursor" style="width:100%" onclick="currentSlide(1)" width='100px' height='30px'
 					alt="Nature and sunrise">
 			</div>
-			<div class="column">
-				<img class="demo cursor" src="{{url('public/home/img/b2.jpg')}}" style="width:100%" onclick="currentSlide(2)" alt="Snow">
-			</div>
-			<div class="column">
-				<img class="demo cursor" src="{{url('public/home/img/b1.jpg')}}" style="width:100%" onclick="currentSlide(3)"
-					alt="Mountains and fjords">
-			</div>
-			<div class="column">
-				<img class="demo cursor" src="{{url('public/home/img/b1.jpg')}}" style="width:100%" onclick="currentSlide(4)"
-					alt="Northern Lights">
-			</div>
+<div id='column'></div>		
 		</div>
 	</div>
 

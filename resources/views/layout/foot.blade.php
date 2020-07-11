@@ -351,12 +351,16 @@
 		}
 	//-->
 	</script>
+	 <script>
+        // global app configuration object
+        var config = {
+            trans: {
+				lang_path:"{{url('public/home/lang')}}"
+			}
+		}
+		</script>
 	<script src="{{url('public/home/js/script.js?v=2021')}}"></script>
-	 <!-- <script >
-	 $('#test').click(function () {
-		 console.log($(this).data('product-id'));
-	});
-	 </script> -->
+	
 </body>
 
 </html>

@@ -35,7 +35,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,900&amp;subset=latin-ext"
 		rel="stylesheet">
-	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" />
+	<!-- <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/droid-arabic-kufi" type="text/css" /> -->
+	<link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 	<link href="{{url('public/home/css/main.css?v=2021')}}" rel="stylesheet" type="text/css">
 	<link href="{{url('public/home/css/responsive.css?v=2021')}}" rel="stylesheet" type="text/css">
 	<link href="{{url('public/home/css/all.min.css')}}" rel="stylesheet" type="text/css">

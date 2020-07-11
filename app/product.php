@@ -13,4 +13,11 @@ class product extends Model
         return $this->hasOne('App\User', 'id', 'user_id');
     }
     
+    public function getProductImageAttribute($img)
+    {
+         if ($img)
+            return asset('public/uploads/Product_images') . '/' . $img;
+        else
+            return "";
+    }
 }

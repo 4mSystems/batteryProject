@@ -3,9 +3,5 @@
 @include('layouts.header')
 
 @include('layouts.sidebar')
-
-
-        @yield('content')
-
-
+@yield('content')
 @include('layouts.footer')

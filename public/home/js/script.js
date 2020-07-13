@@ -59,7 +59,7 @@ $(document).ready(function () {
         /******* End nav bar section  **************/
         $(".btShow").text(language.btShow);
         /******* Start prodcut  section  **************/
-        
+
         $('#products_des').text(language.product_des);
         /******* End prodcut  section  **************/
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
         $("#aboutP3").text(language.aboutP3);
         $("#aboutP4").text(language.aboutP4);
         /*************** End About us ******* */
-        
+
          /*************** Start why we ******* */
          $("#whyP1").text(language.whyP1);
          $("#whyP2").text(language.whyP2);
@@ -96,9 +96,11 @@ $(document).ready(function () {
 
            /*************** Start contact ******* */
            $("#contact1").text(language.contact1);
+           $("#contact_address").text(language.contact_address);
            $("#contact2").text(language.contact2);
            $("#contact3").text(language.contact3);
            $("#contact4").text(language.contact4);
+           $("#copy_rights").text(language.copy_rights);
            /*************** End contact ******* */
     }
     $(".parent").fadeOut();
@@ -124,29 +126,29 @@ var counter=2;
                                             $('#column').append(column);
                                             counter++;
                                         }
-                                       
+
                                     }
-									
+
                                 });
-                                
+
     document.getElementById("myModal").style.display = "block";
   }
-  
+
   function closeModal() {
     document.getElementById("myModal").style.display = "none";
   }
-  
+
   var slideIndex = 1;
   showSlides(slideIndex);
-  
+
   function plusSlides(n) {
     showSlides(slideIndex += n);
   }
-  
+
   function currentSlide(n) {
      showSlides(slideIndex = n);
   }
-  
+
   function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
